@@ -1,0 +1,31 @@
+{
+  "name": "stateless-microservice",
+  "version": "1.0.0",
+  "description": "A stateless microservice with 3 functionailites",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "npm test",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tunjii10/Stateless-Microservice.git"
+  },
+  "author": "Favour",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tunjii10/Stateless-Microservice/issues"
+  },
+  "homepage": "https://github.com/Tunjii10/Stateless-Microservice#readme",
+  "devDependencies": {
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
