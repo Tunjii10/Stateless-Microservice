@@ -8,7 +8,7 @@ import features from './Routes/feature.js';
 const app = express();
 const port = 3000;
 // Create a write stream
-const accessLogStream = fs.createWriteStream('stateless_microservice_log.txt', { flags: 'a' });
+const accessLogStream = fs.createWriteStream('stateless_microservice.log', { flags: 'a' });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
