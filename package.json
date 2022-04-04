@@ -5,7 +5,7 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "test": "nodemon Tests/test.js",
+    "test": "c8 mocha Tests/*.js --exit",
     "start": "nodemon server.js"
   },
   "repository": {
@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/Tunjii10/Stateless-Microservice#readme",
   "devDependencies": {
+    "c8": "^7.11.0",
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
     "eslint": "^8.11.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
@@ -31,6 +34,7 @@
     "fast-json-patch": "^3.1.1",
     "image-downloader": "^4.1.0",
     "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
     "sharp": "^0.30.3"
   }
 }

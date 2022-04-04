@@ -6,6 +6,9 @@ import sharp from 'sharp';
 export default class featureControllers {
     static async json_patch(req, res) {
         // apply patch
+        if ((!(req.body.jsonObject) && !(req.body.jsonpatchObject)) || !(req.body)) {
+            return res.status(400).json({ error: 'Patch Object empty or missing values' });
+        }
         const patchedObject = jsonpatch.applyOperation(req.body.jsonObject, req.body.jsonPatchObject).newDocument;
         res.json({ patchedObject });
     }
@@ -14,6 +17,9 @@ export default class featureControllers {
         // get url and extension
         const imageTypes = ['jpg', 'tif', 'gif', 'png', 'svg', 'apng', 'avif', 'webp'];
         const { url } = req.body;
+        if (!url) {
+            return res.status(400).json({ error: 'Please fill in Url' });
+        }
         const fileExtension = url.split('.').pop().split(/\#|\?/)[0];
         const imageName = url.split('/').pop().split('.')[0];
         // check extension if image

@@ -7,7 +7,7 @@ const isLoggedIn = (req, res, next) => {
         return res.status(403).send({ authorized: false, error: 'Token is required' });
     }
     // verify token
-    const token = authHeader.split(' ')[1];
+    const token = authHeader;
     jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
         if (err) {
             return res.status(401).send({ authorized: false, error: 'Verification Failed' }); 
