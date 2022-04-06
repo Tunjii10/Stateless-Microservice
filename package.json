@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "c8 mocha Tests/*.js --exit",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "lint": "eslint --ext .js --ignore-path .gitignore ."
   },
   "repository": {
     "type": "git",

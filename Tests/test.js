@@ -12,7 +12,7 @@ describe('Stateless Microservice Test Suite', () => {
     const invalidImageurl = 'https://tunjii10.github.io/assets/img/blog';
     const objectPatch = {
         jsonObject: { Albert: 'wear', man: 'self' },
-        jsonPatchObject: { op: 'replace', path: '/Albert', value: 'Joachjim' }
+        jsonPatchObject: { op: 'replace', path: '/Albert', value: 'Joachjim' },
         };
     let token;
     // mock user authentication
@@ -20,7 +20,7 @@ describe('Stateless Microservice Test Suite', () => {
         it('it should not log user if fields empty', (done) => {
             chai.request(app)
             .post('/api/v1/user/login')
-            .send({ username: '', password: ''})
+            .send({ username: '', password: '' })
             .end((err, res) => {
                 expect(res.statusCode).to.equal(400);
                 done();
@@ -44,11 +44,11 @@ describe('Stateless Microservice Test Suite', () => {
             chai.request(app)
             .post('/api/v1/features/create-thumbnail')
             .set('authorization', token)
-            .send({ url :'' })
+            .send({ url: '' })
             .end((err, res) => {
                 expect(res.statusCode).to.equal(400);
                 done();
-            })
+            });
         });
         it('it should not process image if jwt token invalid', (done) => {
             chai.request(app)
@@ -99,7 +99,7 @@ describe('Stateless Microservice Test Suite', () => {
             .patch('/api/v1/features/patch-object')
             .set('authorization', token)
             .send({
-                jsonPatchObject: { op: 'replace', path: '/Albert', value: 'Joachjim' }
+                jsonPatchObject: { op: 'replace', path: '/Albert', value: 'Joachjim' },
                 })
             .end((err, res) => {
                 expect(res.statusCode).to.equal(400);
