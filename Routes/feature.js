@@ -13,6 +13,10 @@ const router = express.Router();
  *  patch:
  *    summary: Patch a JSON object
  *    description: Apply json patch to a json object, and return the resulting json object
+ *    tags:
+ *      [features]
+ *    security:
+ *      [bearerAuth: []]
  *    requestBody:
  *      required: true
  *      content:
@@ -33,13 +37,13 @@ const router = express.Router();
  *        description: Patch Successful
  *        content:
  *          application/json:
- *          schema:
- *            type: object
- *            properties:
- *              patchedObject:
- *                 type: object
- *                 description: Patched Object
- *                 example:  {"Albert": "Joachjim","man": "self"}
+ *            schema:
+ *              type: object
+ *              properties:
+ *                patchedObject:
+ *                  type: object
+ *                  description: Patched Object
+ *                  example:  {"Albert": "Joachjim","man": "self"}
  */
 router.patch(
   '/patch-object',
@@ -67,6 +71,10 @@ router.patch(
  *  post:
  *    summary: Create thumbnail
  *    description: This request downloads an image (public url) and resizes it to 50x50 pixels thumbnail.
+ *    tags:
+ *      [features]
+ *    security:
+ *      [bearerAuth: []]
  *    requestBody:
  *      required: true
  *      content:
@@ -75,29 +83,29 @@ router.patch(
  *            type: object
  *            properties:
  *              url:
- *                 type: string
- *                 description: public url for image download
+ *                 type: string,
+ *                 description: public url for image download,
  *                 example: "https://tunjii10.github.io/assets/img/blog.jpg"
  *    responses:
  *      200:
  *        description: Thumbnail generated
  *        content:
  *          application/json:
- *          schema:
- *            type: object
- *            properties:
- *              converted:
- *                 type: boolean
- *                 description: shows if image is converted
- *                 example: true
- *              success:
- *                 type: string
- *                 description: success message
- *                 example: "Image has been resized"
- *              thumbnail:
- *                 type: string
- *                 description: thumbnail file path
- *                 example: "images/cropped/blog.jpg"
+ *            schema:
+ *              type: object
+ *              properties:
+ *                converted:
+ *                  type: boolean
+ *                  description: shows if image is converted,
+ *                  example: true
+ *                success:
+ *                  type: string
+ *                  description: success message
+ *                  example: "Image has been resized"
+ *                thumbnail:
+ *                  type: string
+ *                  description: thumbnail file path
+ *                  example: "images/cropped/blog.jpg"
  */
 router.post('/create-thumbnail', isLoggedIn, featureController.createThumbNail);
 

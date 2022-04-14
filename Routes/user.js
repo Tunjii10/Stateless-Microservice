@@ -10,6 +10,9 @@ const router = express.Router();
  *  post:
  *    summary: Authentication
  *    description: This is a mock authentication and therefore accepts any username and password pair.
+ *    tags:
+ *      [authentication]
+ *    security: []
  *    requestBody:
  *      required: true
  *      content:
@@ -30,13 +33,13 @@ const router = express.Router();
  *        description: Access granted
  *        content:
  *          application/json:
- *          schema:
- *            type: object
- *            properties:
- *              accessToken:
- *                 type: string
- *                 description: JWT token
- *                 example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1lZyIsImlhdCI6MTY0ODk5NzkzOSwiZXhwIjoxNjQ5MDAxNTM5fQ.0ygS0DaIXwhx4Q_aEqTUORLsWTkRn0n_fsOfkYbM-3Q"
+ *              schema:
+ *                  type: object
+ *                  properties:
+ *                      accessToken:
+ *                          type: string
+ *                          description: JWT token
+ *                          example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1lZyIsImlhdCI6MTY0ODk5NzkzOSwiZXhwIjoxNjQ5MDAxNTM5fQ.0ygS0DaIXwhx4Q_aEqTUORLsWTkRn0n_fsOfkYbM-3Q"
  */
 router.post('/login', userLoginPost);
 

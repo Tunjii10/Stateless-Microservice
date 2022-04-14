@@ -33,11 +33,29 @@ const swaggerDefinition = {
       description: 'Development Server',
     },
   ],
+  tags: [
+    {
+      name: 'features',
+      description: 'JSON patching and thumbnail generation',
+    },
+    {
+      name: 'authentication',
+      description: 'Mock Authentication',
+    },
+  ],
+  components: {
+    securitySchemes: {
+      bearerAuth: {
+        type: 'http',
+        scheme: 'bearer',
+      },
+    },
+  },
 };
 const options = {
   swaggerDefinition,
   // Paths to files containing OpenAPI definitions
-  apis: ['./routes/*.js'],
+  apis: ['./Routes/*.js'],
 };
 const swaggerSpec = swaggerJSDoc(options);
 
