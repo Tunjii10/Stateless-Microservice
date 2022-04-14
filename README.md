@@ -1,6 +1,6 @@
 # Stateless-Microservice
 
-**Simple stateless microservice with authentication, json patching and image thumb nail generation functionalities**
+**This is a submission for the hackerbay interview backend task. A simple stateless microservice with authentication, json patching and image thumb nail generation functionalities.**
 
 ## Setup
 
@@ -90,3 +90,11 @@ Coverage report are saved in json file in this route `coverage\temp\`
 ## Logging
 
 All logs are saved in `stateless_microservice.log` in the application's root.
+
+## Api Documentation
+
+Api documentation was done using Swagger and Jsdoc. The docs are available at `htttp://localhost:3000/docs` on running the server.
+
+## Docker
+
+Projects image can be pulled with `docker pull tunjii10/stateless-microservice:latest` command. The dockerfile can be accessed from projects root directory.
