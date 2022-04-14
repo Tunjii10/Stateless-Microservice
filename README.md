@@ -93,7 +93,7 @@ All logs are saved in `stateless_microservice.log` in the application's root.
 
 ## Api Documentation
 
-Api documentation was done using Swagger and Jsdoc. The docs are available at `htttp://localhost:3000/docs` on running the server.
+Api documentation was done using Swagger and Jsdoc. The docs are available at `_/docs` url.
 
 ## Docker
 
